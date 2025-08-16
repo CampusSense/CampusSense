@@ -34,8 +34,8 @@ urlpatterns = [
 
     # ///////////////////////////////////////////////// HOD  //////////////////////////////////////////
     path('HodHome', HodHome.as_view(), name="HodHome"),
-    path('ManageNotification', ManageNotification.as_view(), name="ManageNotification"),
-    path('ManageSubjects', ManageSubjects.as_view(), name="ManageSubjects"),
+    path('ManageNotification1', ManageNotification1.as_view(), name="ManageNotification1"),
+    path('ManageSubjects1', ManageSubjects1.as_view(), name="ManageSubjects1"),
     path('ViewNotification', ViewProfile.as_view(), name="ViewNotification"),
     path('ViewProfile', ViewProfile.as_view(), name="ViewProfile"),
 

@@ -16,61 +16,22 @@
 <body>
   <table border="3">
     <tr>
-        <th>Notification id</th>
         <th>Title</th>
         <th>Message</th>
         <th>Department id</th>
         <th>Created date</th>
         <th>Expiry Date</th>
     </tr>
+     {% for i in val %}
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ i.Title }}</td>
+        <td>{{ i.Message }}</td>
+        <td>{{i.DEPARTMENT.DepartmentName}}</td>
+        <td>{{ i.CreatedDate }}</td>
+        <td>{{ i.ExpiryDate }}</td>
+        
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+    {% endfor %}
    </table>   
    <button type="submit">SUBMIT</button>
 </body>

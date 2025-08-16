@@ -12,9 +12,12 @@ class Department(models.Model):
 class Course(models.Model):
     CourseName=models.CharField(max_length=50, null=True,blank=True)     
     CourseCredit=models.FloatField(max_length=50,null=True,blank=True)
-    CreatedDate=models.DateField(auto_now=True,null=True,blank=True)   
-
-class Staff(models.Model):  
+    CreatedDate=models.DateField(max_length=50,null=True,blank=True)
+    
+    
+class Staff(models.Model):
+    LOGIN = models.ForeignKey(LoginTable, on_delete=models.CASCADE)
+    DEPARTMENT = models.ForeignKey(Department, on_delete=models.CASCADE)
     StaffName=models.CharField(max_length=50,null=True,blank=True)
     Gender=models.CharField(max_length=50,null=True,blank=True)  
     DateofBirth=models.DateField(auto_now=True,null=True,blank=True)
@@ -25,6 +28,8 @@ class Staff(models.Model):
     ProfileImage=models.FileField(null=True,blank=True)
 
 class Students(models.Model):  
+    DEPARTMENT = models.ForeignKey(Department, on_delete=models.CASCADE)
+    LOGIN = models.ForeignKey(LoginTable, on_delete=models.CASCADE)
     Name=models.CharField(max_length=50,null=True,blank=True)
     RollNumber=models.CharField(max_length=50,null=True,blank=True)
     Gender=models.CharField(max_length=50,null=True,blank=True)  
@@ -37,25 +42,31 @@ class Students(models.Model):
     ProfileImage=models.FileField(null=True,blank=True)   
 
 class Notification(models.Model):
+    DEPARTMENT = models.ForeignKey(Department, on_delete=models.CASCADE)
     Title=models.CharField(max_length=50,null=True,blank=True)     
-    Message=models.Field(max_length=150,null=True,blank=True)
+    Message=models.CharField(max_length=150,null=True,blank=True)
     CreatedDate=models.DateField(auto_now=True,null=True,blank=True)  
     ExpiryDate=models.DateField(auto_now=True,null=True,blank=True) 
 
 class Complaint(models.Model):
+    DEPARTMENT = models.ForeignKey(Department, on_delete=models.CASCADE)
+    STUDENT = models.ForeignKey(Students, on_delete=models.CASCADE)
     ComplaintType=models.CharField(max_length=50,null=True,blank=True)     
-    Subject=models.Field(max_length=100,null=True,blank=True)
+    Subject=models.CharField(max_length=100,null=True,blank=True)
     Description=models.CharField(max_length=150,null=True,blank=True)  
-    AssignedTo=models.CharField(max_length=50,null=True,blank=True)
+    Reply=models.CharField(max_length=150,null=True,blank=True)  
     CreatedDate=models.DateField(auto_now=True,null=True,blank=True)  
     ResolvedDate=models.DateField(auto_now=True,null=True,blank=True)  
 
 class Subject(models.Model):
+    DEPARTMENT = models.ForeignKey(Department, on_delete=models.CASCADE)
+    COURSE = models.ForeignKey(Course, on_delete=models.CASCADE)
     SubjectName=models.CharField(max_length=50,null=True,blank=True)     
-    Semester=models.Field(max_length=100,null=True,blank=True)
+    Semester=models.CharField(max_length=100,null=True,blank=True)
     Type=models.CharField(max_length=150,null=True,blank=True)  
     
 class CorrectionRequest(models.Model):
+    STAFF = models.ForeignKey(Staff, on_delete=models.CASCADE)
     RequestType=models.CharField(max_length=50,null=True,blank=True)     
     Description=models.CharField(max_length=150,null=True,blank=True)  
     CreatedDate=models.DateField(auto_now=True,null=True,blank=True)  

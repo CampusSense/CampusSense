@@ -21,70 +21,30 @@
             <th>Department id</th>
             <th>Subject</th>
             <th>Description</th>
-            <th>Assigned to</th>
+            <th>Reply</th>
             <th>Created date</th>
             <th>Resolved date</th>
         </tr>
+        {% for i in val %}
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{ i.ComplaintType }}</td>
+            <td>{{ i.STUDENT.RollNumber}}</td>
+            <td>{{i.DEPARTMENT.DepartmentName}}</td>
+            <td>{{ i.Subject }}</td>
+            <td>{{ i.Description }}</td>
+            <td>
+                {% if i.Reply == "pending" %}
+                    <input type="text">
+                    <input type="submit">
+                {% else %}
+                
+                {{ i.Reply }}
+                {% endif %}
+            </td>
+            <td>{{ i.CreatedDate }}</td>
+            <td>{{ i.ResolvedDate }}</td>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        {% endfor %}
     </table><br>
     <button type="submit">SUBMIT</button>
 </body>

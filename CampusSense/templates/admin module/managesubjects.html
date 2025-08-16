@@ -16,69 +16,21 @@
 <body>
     <table border="3">
         <tr>
-            <th>Sub id</th>
             <th>Sub name</th>
             <th>Department id</th>
             <th>Course id</th>
             <th>Semester</th>
             <th>Type</th>
         </tr>
+        {% for i in val %} 
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{ i.SubjectName }}</td>
+            <td>{{i.DEPARTMENT.DepartmentName}}</td>
+            <td>{{i.COURSE.CourseName}}</td>
+            <td>{{ i.Semester }}</td>
+            <td>{{ i.Type }}</td>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+      {% endfor %}  
     </table>
     <button type="submit">SUBMIT</button>
 </body>

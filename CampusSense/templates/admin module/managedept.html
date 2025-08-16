@@ -16,22 +16,14 @@
 <body>
    <table border="3">
     <tr>
-        <th>Department id</th>
         <th>Department name</th>
     </tr>
+    {% for i in val %}
     <tr>
-        <td></td>
-        <td></td>
+        <td>{{ i.DepartmentName}}</td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-   </table> 
+    {% endfor %}
+   </table> <br>
    <button type="submit">SUBMIT</button>
 </body>
 </html>

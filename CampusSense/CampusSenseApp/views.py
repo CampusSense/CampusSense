@@ -22,31 +22,38 @@ class AdminHome(View):
 
 class Complaints(View):
     def get(self, request):
-        return render(request, "admin module/complaints.html")        
+        obj = Complaint.objects.all()
+        return render(request, "admin module/complaints.html", {'val': obj})        
 
 class ManageCourse(View):
     def get(self, request):
-        return render(request, "admin module/managecourse.html")        
+        obj = Course.objects.all()
+        return render(request, "admin module/managecourse.html", {'val': obj})        
 
 class ManageDept(View):
     def get(self, request):
-        return render(request, "admin module/managedept.html")   
+        obj = Department.objects.all()
+        return render(request, "admin module/managedept.html", {'val': obj})          
 
 class ManageNotification(View):
     def get(self, request):
-        return render(request, "admin module/managenotification.html")   
+        obj = Notification.objects.all()
+        return render(request, "admin module/managenotification.html", {'val': obj})   
 
 class ManageStaff(View):
     def get(self, request):
-        return render(request, "admin module/managestaff.html")  
+        obj = Staff.objects.all()
+        return render(request, "admin module/managestaff.html", {'val': obj})  
 
 class ManageStudent(View):
     def get(self, request):
-        return render(request, "admin module/managestudent.html") 
+        obj = Students.objects.all()
+        return render(request, "admin module/managestudent.html", {'val': obj}) 
 
 class ManageSubjects(View):
     def get(self, request):
-        return render(request, "admin module/managesubjects.html") 
+        obj = Subject.objects.all()
+        return render(request, "admin module/managesubjects.html", {'val': obj}) 
 
 class ViewProfile(View):
     def get(self, request):
@@ -57,11 +64,11 @@ class ViewProfile(View):
 class HodHome(View):
     def get(self, request):
         return render(request, "HOD module/hodhome.html") 
-class ManageNotification(View):
+class ManageNotification1(View):
     def get(self, request):
         return render(request, "HOD module/manage notification.html")   
 
-class ManageSubjects(View):
+class ManageSubjects1(View):
     def get(self, request):
         return render(request, "HOD module/managesubjects.html")
 
@@ -69,6 +76,6 @@ class ViewNotification(View):
     def get(self, request):
         return render(request, "HOD module/view notification.html")  
 
-class ViewProfile(View):
+class ViewProfile1(View):
     def get(self, request):
         return render(request, "HOD module/view profile.html") 

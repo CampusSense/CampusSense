@@ -15,9 +15,9 @@
 </head>
 <body>
     <table border="3">
+  
     <tr>
         <th>Department id</th>
-        <th>Staff id</th>
         <th>name</th>
         <th>Gender</th>
         <th>DOB</th>
@@ -27,42 +27,19 @@
         <th>Join Date</th>
         <th>Profile Image</th>
     </tr>
+       {% for i in val %}  
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ i.DEPARTMENT.DepartmentName }}</td>
+        <td>{{ i.StaffName }}</td>
+        <td>{{ i.Gender }}</td>
+        <td>{{ i.DateofBirth }}</td>
+        <td>{{ i.Designation }}</td>
+        <td>{{ i.Email }}</td>
+        <td>{{ i.Phone }}</td>
+        <td>{{ i.JoinDate }}</td>
+        <td>{{ i.ProfileImage }}</td>
     </tr>
-     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-     </tr>
+    {% endfor %}
     </table>
     <button type="submit">SUBMIT</button>
 </body>

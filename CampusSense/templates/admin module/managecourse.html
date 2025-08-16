@@ -16,29 +16,17 @@
 <body>
     <table border="3">
     <tr>
-        <th>Course id</th>
         <th>Course name</th>
         <th>Course Credit</th>
         <th>Created Date</th>
     </tr>
+        {% for i in val %}
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ i.CourseName }}</td>
+        <td>{{ i.CourseCredit }}</td>
+        <td>{{ i.CreatedDate }}</td>
     </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+     {% endfor %}
    </table> 
    <button type="submit">SUBMIT</button>
 </body>
